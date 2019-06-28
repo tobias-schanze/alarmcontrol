@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.0.RELEASE</version>
+    <version>2.1.5.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.alarmcontrol</groupId>
@@ -41,6 +41,17 @@
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.reactivex.rxjava2</groupId>
+      <artifactId>rxjava</artifactId>
     </dependency>
 
     <dependency>
@@ -80,8 +91,8 @@
   </dependencies>
 
   <build>
+    <finalName>alarmcontrol-server</finalName>
     <plugins>
-
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -134,7 +145,7 @@
         <version>3.0.1</version>
         <executions>
           <execution>
-            <id>react-build-into-target</id>
+            <id>copy-react-build-into-static</id>
             <goals>
               <goal>copy-resources</goal>
             </goals>
@@ -151,7 +162,6 @@
           </execution>
         </executions>
       </plugin>
-
 
     </plugins>
   </build>
